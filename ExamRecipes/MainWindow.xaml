@@ -1,0 +1,52 @@
+﻿<Window x:Class="Моя_книга_рецептов.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Моя_книга_рецептов"
+        mc:Ignorable="d"
+        Title="Рецепты" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10">
+
+            <TextBox x:Name="Recipe" Text="Название блюда:"/>
+
+            <TextBox x:Name="Ingredient" Text="Ингредиенты:"/>
+
+            <ComboBox  x:Name="Categories">
+                <ComboBoxItem Content="Лёгкий перекус"/>
+                <ComboBoxItem Content="Горячее блюдо"/>
+                <ComboBoxItem Content="Десерт"/>
+            </ComboBox>
+
+            <TextBox x:Name="Instruction" Text="Детали рецепта:" Height="50"/>
+            <Button Click="Button_Click">Добавить</Button>
+
+            <TextBox x:Name="Search" 
+                     Text="Поиск по ингредиентам" />
+
+            <ComboBox x:Name="CategoriesF" Margin="0,0,0,10" SelectionChanged="CategoryF">
+                <ComboBoxItem Content="Лёгкий перекус"/>
+                <ComboBoxItem Content="Горячее блюдо"/>
+                <ComboBoxItem Content="Десерт"/>
+            </ComboBox>
+
+            <ListBox x:Name="RecipeLB" Height="100" SelectionChanged="RecipesLB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10">
+
+            <TextBlock Text="Детали рецепта:" FontWeight="Bold" FontSize="16"/>
+            <TextBlock x:Name="SName" FontSize="15" FontWeight="Bold"/>
+            <TextBlock x:Name="SIngredient" FontSize="15"/>
+            <TextBlock x:Name="SCategories" FontSize="15"/>
+            <TextBlock x:Name="SInstructions" FontSize="15"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
